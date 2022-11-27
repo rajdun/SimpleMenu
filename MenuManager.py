@@ -1,6 +1,5 @@
 import os
 
-
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -18,9 +17,9 @@ class MenuManager:
         if self.current_choice is not None:
             print("0. Powrót")
 
-        for i in range(len(self.choice_list)):
-            print(f"{i + 1}. {str(self.choice_list[i])}")
-            if self.choice_list[i] == self.current_choice:
+        for i, choice in enumerate(self.choice_list):
+            print(f"{i + 1}. {str(choice)}")
+            if choice == self.current_choice:
                 self.current_choice.draw_subchoices()
         print()
         if self.last_message != "":
@@ -57,7 +56,7 @@ class MenuManager:
             return
 
         try:
-            self.last_message = self.current_choice.execute()
+            self.last_message = self.current_choice.execute([])
         except KeyboardInterrupt:
             self.is_running = False
         self.current_choice = None

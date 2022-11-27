@@ -3,7 +3,7 @@ from Choices.SampleSubchoice import SampleSubchoice
 
 
 class SampleChoice(BaseChoice):
-    def execute(self) -> str:
+    def execute(self, args) -> str:
         pass
 
     def register_subchoices(self) -> None:

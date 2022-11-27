@@ -1,4 +1,5 @@
-class BaseChoice:
+from Choices.Executable import Executable
+class BaseChoice(Executable):
     sub_choices = []
     is_subcommand = False
     indent = int()
@@ -7,14 +8,11 @@ class BaseChoice:
         self.indent = indent+1
         self.register_subchoices()
 
-    def execute(self) -> str:
-        pass
-
     def draw_subchoices(self) -> None:
         space = " "*self.indent
 
-        for i in range(len(self.sub_choices)):
-            print(f"{space}{i+1}.{self.sub_choices[i].__str__()}")
+        for i, choice in enumerate(self.sub_choices):
+            print(f"{space}{i+1}.{choice.__str__()}")
 
     def register_subchoices(self) -> None:
         self.sub_choices = []
