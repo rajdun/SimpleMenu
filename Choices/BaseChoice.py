@@ -1,7 +1,7 @@
 from Choices.Executable import Executable
 class BaseChoice(Executable):
     sub_choices = []
-    is_subcommand = False
+    is_subchoice = False
     indent = int()
 
     def __init__(self, indent=0):

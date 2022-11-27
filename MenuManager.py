@@ -25,9 +25,9 @@ class MenuManager:
         if self.last_message != "":
             print(self.last_message)
 
-    def get_choice(self) -> str:
+    def get_choice(self, input_value: str) -> str:
         try:
-            choice = int(input(">"))
+            choice = int(input_value)
         except ValueError:
             return "Wartość misu być liczbą."
 
@@ -65,6 +65,7 @@ class MenuManager:
         while self.is_running:
             clear_console()
             self.draw_menu()
-            self.last_message = self.get_choice()
+            input_value = input(">")
+            self.last_message = self.get_choice(input_value)
             if self.last_message == "" and self.current_choice is not None:
                 self.execute_choice()

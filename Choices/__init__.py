@@ -22,7 +22,7 @@ for (_, module_name, _) in iter_modules([package_dir]):
         if isclass(attribute):
             if issubclass(attribute, BaseChoice) and attribute != BaseChoice:
                 # Add the class to this package's variables
-                if not attribute.is_subcommand:
+                if not attribute.is_subchoice:
                     globals()[attribute_name] = attribute
             if issubclass(attribute, Argumentable) and attribute != Argumentable and len(argv) > 1:
                 if attribute.arg == argv[1] or attribute.alias == argv[1]:

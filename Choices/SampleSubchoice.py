@@ -3,7 +3,7 @@ from Choices.Argumentable import Argumentable
 
 
 class SampleSubchoice(BaseChoice, Argumentable):
-    is_subcommand = True
+    is_subchoice = True
     arg = "--sample"
     alias = "-s"
     help = "Przykladowa komenda"
