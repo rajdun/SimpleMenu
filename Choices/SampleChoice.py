@@ -7,9 +7,7 @@ class SampleChoice(BaseChoice):
         pass
 
     def register_subchoices(self) -> None:
-        sub_choice = SampleSubchoice(indent=self.indent)
-
-        self.sub_choices.append(sub_choice)
+        self.sub_choices.append(SampleSubchoice())
 
     def __str__(self):
         return "Testowa opcja z podopcjami"
