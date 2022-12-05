@@ -1,9 +1,9 @@
 from Choices.Executable import Executable
 class BaseChoice(Executable):
+    is_subchoice = False
     def __init__(self):
         self.indent = 0
         self.sub_choices = []
-        self.is_subchoice = False
         self.indent = int()
 
         self.register_subchoices()
